@@ -1,0 +1,6 @@
+{
+  "helloWorld": "Witaj Świecie!",
+  "@helloWorld": {
+    "description": "Powitanie po polsku"
+  }
+}
