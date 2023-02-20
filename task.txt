@@ -1,0 +1,16 @@
+Technologia Flutter dart
+
+1.       Chcemy zbudować ekran z listą stacji kolejowych. Każda stacja musi mieć nazwę, kod IBNR, niektóre z nich mogą mieć kod EPA. Kody stacji są numeryczne. 
+Istnieją dwa rodzaje stacji, normalna oraz metastacja.
+Obiekt stacji można utworzyć publicznym konstruktorem albo z mapy/json.
+
+2.       Na ekranie powinna być widoczna lista stacji. W każdym wierszu powinien znajdować się numer IBNR, EPA, nazwa oraz jej typ.
+Po kliknięciu w stację użytkownik powinien zobaczyć komunikat: "Wybrano stację".
+Ostatnio wybrana stacja powinna być zapamiętywana w zmiennej.
+
+3.       Nad listą stacji znajduje się wyszukiwarka umożliwiająca wyszukiwanie pod nazwie lub dowolnym kodzie.
+
+4.       Unit test do stacji
+
+
+ 
