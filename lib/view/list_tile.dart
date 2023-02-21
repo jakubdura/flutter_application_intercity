@@ -75,11 +75,10 @@ class _MyListTileState extends State<ListStationTile> {
   }
 
   void onTapItem(String nameOfItem) {
+    saveLastSelectedStation(nameOfItem);
     final snackBar = SnackBar(
       content: Text('Wybrano stacje: $nameOfItem'),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    saveLastSelectedStation(nameOfItem);
-    getLastSelectedStation();
   }
 }

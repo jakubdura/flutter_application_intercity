@@ -1,4 +1,4 @@
-import '../data/station.dart';
+import 'station.dart';
 
 var exampleStationList = [
   const Station(
@@ -13,9 +13,10 @@ var exampleStationList = [
       codeIBNR: 1234,
       codeEPA: 4444),
   const Station(
-      name: "Łódź Widzew", type: "normal", codeIBNR: 1234, codeEPA: 8888),
+      name: "Łódź Widzew", type: "normal", codeIBNR: 1234, codeEPA: 2288),
   const Station(
       name: "Warszawa Stadion", type: "normal", codeIBNR: 1234, codeEPA: 8888),
   const Station(
-      name: "Łódź Fabryczna", type: "meta", codeIBNR: 1234, codeEPA: 8888),
+      name: "Łódź Fabryczna", type: "meta", codeIBNR: 1234, codeEPA: 5588),
+  const Station(name: "Maków", type: "normal", codeIBNR: 5454, codeEPA: 7788),
 ];

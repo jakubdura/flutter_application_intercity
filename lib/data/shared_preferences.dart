@@ -9,9 +9,9 @@ Future<void> saveLastSelectedStation(String nameOfStation) async {
   await prefs.setString('lastSelectedStation', nameOfStation);
 }
 
-Future<void> getLastSelectedStation() async {
+Future<String> getLastSelectedStation() async {
   final prefs = await SharedPreferences.getInstance();
-  String result = prefs.getString('lastSelectedStation') ?? 'null';
-  // ignore: avoid_print
-  print('Last checked station: $result');
+  String result =
+      prefs.getString('lastSelectedStation') ?? 'Nie wybrano jeszcze stacji.';
+  return result;
 }
