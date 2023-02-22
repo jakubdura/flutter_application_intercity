@@ -4,6 +4,8 @@ import 'package:flutter_application_intercity/view/json_page.dart';
 import 'package:flutter_application_intercity/view/list_tile.dart';
 import 'package:flutter_application_intercity/data/station.dart';
 
+import '../data/filter_station_list.dart';
+
 class ListPage extends StatefulWidget {
   const ListPage({super.key});
 
@@ -80,13 +82,7 @@ class _ListPageState extends State<ListPage> {
     if (searchText.isEmpty) {
       _filteredStationList.addAll(_stations);
     } else {
-      for (var item in _stations) {
-        if (item.name.toLowerCase().contains(searchText.toLowerCase()) ||
-            item.codeIBNR.toString().contains(searchText) ||
-            item.codeEPA.toString().contains(searchText)) {
-          _filteredStationList.add(item);
-        }
-      }
+      _filteredStationList.addAll(filterStationList(_stations, searchText));
     }
     setState(() {});
   }

@@ -14,41 +14,43 @@ class ListStationTile extends StatefulWidget {
 }
 
 class _MyListTileState extends State<ListStationTile> {
-  bool checkboxValue = false;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ColoredBox(
-          color: getStationColor(widget.station),
-          child: ListTile(
-            leading: const Icon(
-              Icons.subway,
-              color: Colors.black,
-              size: 60,
-            ),
-            title: Text(widget.station.name),
-            subtitle: Text('Typ: ${getStationType(widget.station)}'),
-            style: ListTileStyle.list,
-            trailing: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Column(
-                children: [
-                  Text('IBNR: ${widget.station.codeIBNR}'),
-                  Text(widget.station.codeEPA != null
-                      ? 'EPA: ${widget.station.codeEPA}'
-                      : ""),
-                ],
+        Card(
+          child: ColoredBox(
+            color: getStationColor(widget.station),
+            child: ListTile(
+              leading: const Icon(
+                Icons.subway,
+                color: Colors.black,
+                size: 60,
               ),
+              title: Text(widget.station.name),
+              subtitle: Text('Typ: ${getStationType(widget.station)}'),
+              style: ListTileStyle.list,
+              trailing: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  children: [
+                    Text('IBNR: ${widget.station.codeIBNR}'),
+                    widget.station.codeEPA != null
+                        ? Text('EPA: ${widget.station.codeEPA}')
+                        : const SizedBox(
+                            key: ValueKey('nullEpaSizedBox'),
+                          ),
+                  ],
+                ),
+              ),
+              onTap: () {
+                onTapItem(widget.station.name);
+              },
             ),
-            onTap: () {
-              onTapItem(widget.station.name);
-            },
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 8,
         ),
       ],
     );
