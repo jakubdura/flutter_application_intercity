@@ -79,11 +79,7 @@ class _ListPageState extends State<ListPage> {
 
   void _filterList(String searchText) {
     _filteredStationList.clear();
-    if (searchText.isEmpty) {
-      _filteredStationList.addAll(_stations);
-    } else {
-      _filteredStationList.addAll(filterStationList(_stations, searchText));
-    }
+    _filteredStationList.addAll(filterStationList(_stations, searchText));
     setState(() {});
   }
 }
